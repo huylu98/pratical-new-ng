@@ -1,5 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 
+interface People {
+  name: string;
+  age: number;
+  city?: string;
+}
+
+interface PeopleByCity {
+  city: string;
+  people: People[];
+}
+
 @Component({
   selector: 'app-ng-for-example',
   templateUrl: './ng-for-example.component.html',
@@ -7,8 +18,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NgForExampleComponent implements OnInit {
   cities!: string[];
-  people!: any[];
-  peopleByCity!: any;
+  people: People[] = [];
+  peopleByCity!: PeopleByCity[];
 
   constructor() {
   }
